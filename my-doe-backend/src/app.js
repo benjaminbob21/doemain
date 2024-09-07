@@ -7,7 +7,8 @@ import { WaterQualityData } from "./models/at200.js";
 import { WaterQualityDataSecond } from "./models/at500.js";
 import { BatteryData } from "./models/vulink.js";
 import cookieParser from "cookie-parser";
-import path from "path";
+import path from "path"
+const __dirname = path.resolve();
 
 const app = express();
 
@@ -22,8 +23,7 @@ app.use(
   })
 );
 
-app.use(express.static(path.join(__dirname, "../../my-doe-frontend/dist")))
-
+app.use(express.static(path.join(__dirname, "../../my-doe-frontend/dist")));
 // Mount the data routes
 app.use("/api", route);
 
